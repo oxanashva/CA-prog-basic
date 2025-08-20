@@ -1,0 +1,22 @@
+.animal-list {
+    font-family: sans-serif;
+}
+
+.animal-list caption {
+   font-size: 2rem;
+   font-weight: bold;
+   margin-block: 1rem;
+}
+
+.animal-list, .animal-list tr, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+.animal-list tr, td {
+    padding: 1rem;
+}
+
+.animal-list a {
+    text-decoration: underline;
+}

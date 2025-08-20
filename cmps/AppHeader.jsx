@@ -14,10 +14,13 @@ export function AppHeader({page = 'home', onSetPage}) {
                     <a href="" className={(page === 'home') ? 'active' : ''}
                         onClick={(ev) => onPageChange(ev, 'home')}>
                         Home
-                    </a> |
+                    </a> | 
                     <a href="" className={(page === 'about') ? 'active' : ''}
                         onClick={(ev) => onPageChange(ev, 'about')}>
                         About
+                    </a> | 
+                    <a href="" className={(page === 'animal-list') ? 'active' : ''} onClick={(ev) => onPageChange(ev, 'animal-list')}>
+                        Animal List
                     </a>
                 </nav>
             </section>

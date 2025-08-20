@@ -16,3 +16,9 @@
     padding: 1em;
     margin: auto;
 }
+
+.animal-list-theme {
+    background-color: brown;
+    color: white;
+    height: 100vh;
+}
