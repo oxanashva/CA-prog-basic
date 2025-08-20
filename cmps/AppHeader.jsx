@@ -21,6 +21,9 @@ export function AppHeader({page = 'home', onSetPage}) {
                     </a> | 
                     <a href="" className={(page === 'animal-list') ? 'active' : ''} onClick={(ev) => onPageChange(ev, 'animal-list')}>
                         Animal List
+                    </a> |
+                    <a href="" className={(page === 'season-clock') ? 'active' : ''} onClick={(ev) => onPageChange(ev, 'season-clock')}>
+                        Season Clock
                     </a>
                 </nav>
             </section>

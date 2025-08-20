@@ -17,8 +17,6 @@
     margin: auto;
 }
 
-.animal-list-theme {
-    background-color: brown;
-    color: white;
-    height: 100vh;
+.full-height {
+    height: calc(100vh - 43px);
 }

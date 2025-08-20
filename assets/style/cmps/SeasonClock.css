@@ -1,0 +1,20 @@
+.season-clock {
+    height: 100%;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+.season-clock h2 {
+    font-size: 3rem;
+}
+
+.season-clock p {
+    font-size: 1.5rem;
+}
+
+.season-clock .clock {
+    margin-block-end: 4rem;
+}
