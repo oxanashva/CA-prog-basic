@@ -4,8 +4,12 @@ import { watchers }  from '../assets/data/watchers.js';
 export function WatcherApp({onChangeBackground}) {
 
 
-     useEffect(() => {
+    useEffect(() => {
         onChangeBackground({backgroundColor: '#debaab', color: '#0a2694'})
+
+        return(() => {
+            onChangeBackground(null)
+        })
     }, [])
 
     return (

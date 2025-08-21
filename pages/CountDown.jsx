@@ -35,6 +35,10 @@ export function CountDown({startFrom, toTime, onDone, onChangeBackground}) {
 
     useEffect(() => {
         onChangeBackground({backgroundColor: 'lightblue', color: '#0a2694'})
+
+        return(() => {
+            onChangeBackground(null)
+        })
     }, [])
     
     function handleDone() {

@@ -4,6 +4,10 @@ const { useEffect } = React
 export function AnimalList({animalInfos, onChangeBackground}) {
     useEffect(() => {
         onChangeBackground({backgroundColor: 'brown', color: 'white'})
+
+        return(() => {
+            onChangeBackground(null)
+        })
     }, [])
 
     return (
