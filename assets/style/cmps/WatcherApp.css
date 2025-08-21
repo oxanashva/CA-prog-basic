@@ -1,0 +1,52 @@
+.watcher-app {
+    margin: 0 auto;
+    display: grid;
+}
+
+.watcher-app h1 {
+    text-align: center;
+    font-size: 2rem;
+} 
+.watcher-app .add-btn {
+    margin: 0 auto;
+}
+
+.watcher-app  {
+    margin: 0 auto;
+}
+
+.watcher-app .cards-container {
+    display: grid;
+    gap: 1rem;
+    margin-block: 2rem;
+}
+
+.watcher-app article {
+    background-color: white;
+    padding: 1rem;
+}
+
+.watcher-app article img {
+    
+}
+
+.watcher-app article p {
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 1.6rem;
+    margin-block: 1rem 0;
+}
+
+.watcher-app article .btns-container {
+    display: flex;
+    justify-content: center;
+}
+
+@media (min-width: 1024px) {
+    .watcher-app {
+        width: 1024px;
+    }
+    .watcher-app .cards-container {
+        grid-template-columns: repeat(4, 1fr)
+    }
+}

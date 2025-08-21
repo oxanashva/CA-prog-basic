@@ -27,6 +27,9 @@ export function AppHeader({page = 'home', onSetPage}) {
                     </a> |
                     <a href="" className={(page === 'count-down') ? 'active' : ''} onClick={(ev) => onPageChange(ev, 'count-down')}>
                         Count Down
+                    </a> |
+                    <a href="" className={(page === 'watcher-app') ? 'active' : ''} onClick={(ev) => onPageChange(ev, 'watcher-app')}>
+                        Watcher App
                     </a>
                 </nav>
             </section>
