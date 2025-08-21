@@ -11,38 +11,17 @@ export function SeasonClock({onChangeBackground}) {
 
     const intervalId = useRef(null)
 
-    const season = utilService.getSeasonName(new Date(now))
-    const month = utilService.getMonthName(new Date(now))
-    const day = utilService.getDayName(new Date(now))
-
-    const backgrounds = {
-        winter: {dark: '#000080', light: '#ADD8E6'},
-        spring: {dark: '#228B22', light: '#78d86b'},
-        summer: {dark: '#b9ae00',light: '#faf1cb'},
-        autumn: {dark: '#CC5500',light: '#ffcf7f'}  
-    }
-
-    const textColor = isDark ? 'white' : "black"
-
-    const themeStyles = {
-        backgroundColor: isDark ? backgrounds[season.toLowerCase()].dark : backgrounds[season.toLowerCase()].light,
-        color: textColor
-    }
-
-    function handleClick() {
-        setIsDark(isDark => !isDark)
-    }
-
     useEffect(() => {
         intervalId.current = setInterval(() => {
             setNow(new Date())
 
             // // ***** Start Test *****
-            // setNow(prevTimestamp => {
-            //     const newTimestamp = new Date(prevTimestamp.getTime() + 1000); // Add 1000 ms (1 second)
-            //     return newTimestamp;
+            // setNow(prevNow => {
+            //     const newNow = new Date(prevNow.getTime() + 1000); // Add 1000 ms (1 second)
+            //     return newNow;
             // });
             // // ***** End Test *****
+
         }, 1000)
 
         return (() => {
@@ -56,7 +35,28 @@ export function SeasonClock({onChangeBackground}) {
         return(() => {
             onChangeBackground(null)
         })
-    }, [isDark, season])
+    }, [isDark, now])
+
+    const backgrounds = {
+        winter: {dark: '#000080', light: '#ADD8E6'},
+        spring: {dark: '#228B22', light: '#78d86b'},
+        summer: {dark: '#b9ae00',light: '#faf1cb'},
+        autumn: {dark: '#CC5500',light: '#ffcf7f'}  
+    }
+
+    const season = utilService.getSeasonName(new Date(now))
+    const month = utilService.getMonthName(new Date(now))
+    const day = utilService.getDayName(new Date(now))
+    
+    const textColor = isDark ? 'white' : "black"
+    const themeStyles = {
+        backgroundColor: isDark ? backgrounds[season.toLowerCase()].dark : backgrounds[season.toLowerCase()].light,
+        color: textColor
+    }
+
+    function handleClick() {
+        setIsDark(isDark => !isDark)
+    }
 
     return (
         <section className="season-clock" onClick={handleClick}>
