@@ -3,17 +3,17 @@ import { utilService } from "../services/util.service.js"
 
 export function SeasonClock({onChangeBackground}) {
     const [isDark, setIsDark] = useState(true)
-    const [timestamp, setTimestamp] = useState(new Date())
+    const [now, setNow] = useState(new Date())
 
     // // ***** Start Test *****
-    // const [timestamp, setTimestamp] = useState(new Date('2025-11-30T23:59:55'));
+    // const [now, setNow] = useState(new Date('2025-11-30T23:59:55'));
     // // ***** End Test *****
 
     const intervalId = useRef(null)
 
-    const season = utilService.getSeasonName(new Date(timestamp))
-    const month = utilService.getMonthName(new Date(timestamp))
-    const day = utilService.getDayName(new Date(timestamp))
+    const season = utilService.getSeasonName(new Date(now))
+    const month = utilService.getMonthName(new Date(now))
+    const day = utilService.getDayName(new Date(now))
 
     const backgrounds = {
         winter: {dark: '#000080', light: '#ADD8E6'},
@@ -35,10 +35,10 @@ export function SeasonClock({onChangeBackground}) {
 
     useEffect(() => {
         intervalId.current = setInterval(() => {
-            setTimestamp(new Date())
+            setNow(new Date())
 
             // // ***** Start Test *****
-            // setTimestamp(prevTimestamp => {
+            // setNow(prevTimestamp => {
             //     const newTimestamp = new Date(prevTimestamp.getTime() + 1000); // Add 1000 ms (1 second)
             //     return newTimestamp;
             // });
@@ -63,7 +63,7 @@ export function SeasonClock({onChangeBackground}) {
             <h2><span className="month">{month}</span><span className="season">({season})</span></h2>
             <img src={`../assets/img/season-imgs/${season.toLowerCase()}.png`} alt="Winter" width="200" />
             <p className="day">{day}</p>
-            <p className="clock">{utilService.updateClock(timestamp)}</p>
+            <p className="clock">{utilService.updateClock(now)}</p>
         </section>
     )
 }
