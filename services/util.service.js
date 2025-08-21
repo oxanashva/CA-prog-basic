@@ -83,8 +83,7 @@ function formatTime(sec) {
     return `${_pad(hours)}:${_pad(minutes)}:${_pad(seconds)}`
 }
 
-function updateClock() {
-    const now = new Date()
+function updateClock(now) {
     const hours = now.getHours().toString().padStart(2, '0')
     const minutes = now.getMinutes().toString().padStart(2, '0')
     const seconds = now.getSeconds().toString().padStart(2, '0')
