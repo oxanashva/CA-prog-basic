@@ -7,6 +7,7 @@ import { animalInfos } from './assets/data/animals.js';
 import { SeasonClock } from "./pages/SeasonClock.jsx"
 import { CountDown } from "./pages/CountDown.jsx"
 import { WatcherApp } from "./pages/WatcherApp.jsx"
+import { MouseMonitor } from "./pages/MouseMonitor.jsx"
 import { utilService } from "./services/util.service.js";
 
 
@@ -40,6 +41,7 @@ export function RootCmp() {
                     {page === 'season-clock' && <SeasonClock onChangeBackground={onChangeBackground} />}
                     {page === 'count-down' && <CountDown onChangeBackground={onChangeBackground} toTime={Date.now() + 1000 * 10} startFrom={10} onDone={onDone} />}
                     {page === 'watcher-app' && <WatcherApp onChangeBackground={onChangeBackground} />}
+                    {page === 'mouse-monitor' && <MouseMonitor />}
                 </main>
             </main>
         </section>

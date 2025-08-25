@@ -1,0 +1,19 @@
+.mouse-monitor {
+    position: relative;
+    width: 100%;
+    min-height: calc(100vh - 43px);
+    font-family: sans-serif;
+}
+
+.mouse-monitor .mouse-info {
+    position: absolute;
+    bottom: 4rem;
+    right: 4rem;
+    padding: 1rem;
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
