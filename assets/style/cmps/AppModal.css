@@ -1,0 +1,22 @@
+.app-modal {
+    width: 400px;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 1rem;
+}
+
+.app-modal::backdrop {
+    background-color: black;
+    opacity: .4;
+}
+
+.app-modal .close {
+    position: absolute;
+    top: .5rem;
+    right: .5rem;
+}
+
+.app-modal ul {
+    list-style: none;
+    padding: 0;
+}

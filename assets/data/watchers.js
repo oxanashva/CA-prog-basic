@@ -1,4 +1,4 @@
-export const watchers = [
+export const sampleWatchers = [
     {
         id: 'w101',
         fullname: 'Alex Johnson',
