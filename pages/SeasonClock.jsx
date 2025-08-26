@@ -1,7 +1,7 @@
 const { useState, useEffect, useRef } = React
 import { utilService } from "../services/util.service.js"
 
-export function SeasonClock({onChangeBackground}) {
+export function SeasonClock({ onChangeBackground }) {
     const [isDark, setIsDark] = useState(true)
     const [now, setNow] = useState(new Date())
 
@@ -32,22 +32,22 @@ export function SeasonClock({onChangeBackground}) {
     useEffect(() => {
         onChangeBackground(themeStyles)
 
-        return(() => {
+        return (() => {
             onChangeBackground(null)
         })
     }, [isDark, now])
 
     const backgrounds = {
-        winter: {dark: '#000080', light: '#ADD8E6'},
-        spring: {dark: '#228B22', light: '#78d86b'},
-        summer: {dark: '#b9ae00',light: '#faf1cb'},
-        autumn: {dark: '#CC5500',light: '#ffcf7f'}  
+        winter: { dark: '#000080', light: '#ADD8E6' },
+        spring: { dark: '#228B22', light: '#78d86b' },
+        summer: { dark: '#b9ae00', light: '#faf1cb' },
+        autumn: { dark: '#CC5500', light: '#ffcf7f' }
     }
 
     const season = utilService.getSeasonName(new Date(now))
     const month = utilService.getMonthName(new Date(now))
     const day = utilService.getDayName(new Date(now))
-    
+
     const textColor = isDark ? 'white' : "black"
     const themeStyles = {
         backgroundColor: isDark ? backgrounds[season.toLowerCase()].dark : backgrounds[season.toLowerCase()].light,
@@ -61,7 +61,7 @@ export function SeasonClock({onChangeBackground}) {
     return (
         <section className="season-clock" onClick={handleClick}>
             <h2><span className="month">{month}</span><span className="season">({season})</span></h2>
-            <img src={`../assets/img/season-imgs/${season.toLowerCase()}.png`} alt="Winter" width="200" />
+            <img src={`assets/img/season-imgs/${season.toLowerCase()}.png`} alt={season} width="200" />
             <p className="day">{day}</p>
             <p className="clock">{utilService.updateClock(now)}</p>
         </section>
